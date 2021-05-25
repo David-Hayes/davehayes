@@ -1,8 +1,16 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
-    extend: {}
+    colors: {
+      primary: '#d04b27',
+      gray: colors.trueGray
+    },
+    fontFamily: {
+      sans: ['"Merriweather"']
+    }
   },
   variants: {
     extend: {}

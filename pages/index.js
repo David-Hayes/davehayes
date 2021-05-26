@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
@@ -92,7 +91,7 @@ export default function Home() {
       <main>
         <div className="max-w-screen-md mx-auto px-5">
           <div className="w-32 h-32 relative rounded-full overflow-hidden border-primary border-4 mx-auto">
-            <Image src="/profile.jpg" alt="Profile" layout="fill" />
+            <img src="/profile.jpg" alt="Profile" />
           </div>
           <p className="text-center text-3xl mt-5">Hi, I&apos;m David!</p>
           <p className="text-center mt-3">

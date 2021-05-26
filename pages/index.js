@@ -1,15 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
-import React, { useEffect, useState } from 'react'
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false)
   const { resolvedTheme, setTheme } = useTheme()
-
-  useEffect(() => setMounted(true), [])
-
-  if (!mounted) return null
 
   return (
     <>
@@ -49,11 +43,15 @@ export default function Home() {
               aria-label="Toggle Dark Mode"
               type="button"
               onClick={() =>
-                setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+                setTheme(
+                  resolvedTheme === 'dark' || resolvedTheme === undefined
+                    ? 'light'
+                    : 'dark'
+                )
               }
               className="hover:text-gray-500 dark:hover:text-gray-400"
             >
-              {resolvedTheme === 'dark' ? (
+              {resolvedTheme === 'dark' || resolvedTheme === undefined ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"

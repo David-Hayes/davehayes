@@ -99,7 +99,7 @@ export default function Home(props) {
       <main>
         <div className="max-w-screen-md mx-auto px-5 mb-16">
           <div className="w-32 h-32 relative rounded-full overflow-hidden border-primary border-4 mx-auto mb-7">
-            <img src="/profile.jpg" alt="Profile" />
+            <img src="/profile.jpg" alt="Profile" width="120" height="120" />
           </div>
           <p className="text-center text-3xl mb-4">Hi, I&apos;m David!</p>
           <p className="text-center mb-10">

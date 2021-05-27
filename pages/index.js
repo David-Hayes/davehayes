@@ -94,8 +94,8 @@ export default function Home() {
           <p className="text-center text-3xl mt-5">Hi, I&apos;m David!</p>
           <p className="text-center mt-3">
             I am a technical lead with a background in Front End Development. I
-            love building and supporting teams creating high quality digital
-            experiences. Feel free to get in touch via:
+            thrive on empowering teams to deliver high quality user centric
+            experiences.
           </p>
           <p className="flex items-center justify-center mt-10 space-x-4">
             <Link href="https://twitter.com/thedavehayes">

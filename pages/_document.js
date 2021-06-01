@@ -8,9 +8,9 @@ class AppDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html className="h-full">
         <Head />
-        <body className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-200">
+        <body className="bg-gray-100 text-gray-800 bg-site-grad bg-no-repeat px-5">
           <Main />
           <NextScript />
         </body>

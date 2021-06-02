@@ -109,8 +109,8 @@ export default function Home(props) {
               </p>
               <p>
                 With a background in Front End Development (including JavaScript
-                / React / Next.js) I thrive on building and empowering teams
-                delivering high quality user centric experiences.
+                / React / Next.js) I thrive on building and empowering teams to
+                deliver high quality user centric experiences.
               </p>
               <p>Feel free to reach out.</p>
             </div>

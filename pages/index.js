@@ -1,7 +1,17 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-export default function Home() {
+export async function getStaticProps() {
+  const feed = await fetch(
+    `${process.env.NEXT_PUBLIC_BASEURL}/.netlify/functions/devfeed`
+  )
+  const data = await feed.json()
+  return {
+    props: { feed: data }
+  }
+}
+
+export default function Home(props) {
   return (
     <>
       <Head>
@@ -17,19 +27,19 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-      <div className="max-w-md mx-auto mt-10">
+      <div className="max-w-lg mx-auto my-10">
         <header className="mb-12">
           <div className="rounded-md overflow-hidden shadow-md">
-            <div className="bg-white bg-opacity-10 p-5 text-center">
+            <div className="bg-white bg-opacity-20 p-5 text-center">
               <img
                 src="/profile.jpg"
                 alt="David Hayes"
                 className="rounded-full shadow-md mx-auto w-36"
               />
               <h1 className="text-3xl font-medium mt-5">David Hayes</h1>
-              <p>Engineering Manager &amp; Techincal lead</p>
+              <p>Engineering Manager &amp; Techincal Lead</p>
             </div>
-            <div className="bg-white bg-opacity-30 p-5 flex flex-row justify-center gap-3">
+            <div className="bg-white bg-opacity-10 p-5 flex flex-row justify-center gap-3">
               <Link href="https://twitter.com/thedavehayes">
                 <a title="Twitter" className="hover:text-gray-600">
                   <svg
@@ -85,6 +95,57 @@ export default function Home() {
             </div>
           </div>
         </header>
+        <main>
+          <div className="rounded-md overflow-hidden shadow-md mb-12">
+            <div className="bg-white bg-opacity-20 p-5">
+              <h2 className="text-xl font-medium">About</h2>
+            </div>
+            <div className="bg-white bg-opacity-10 p-5 flex flex-col gap-4">
+              <p>
+                Hi, I&apos;m David! I am a software engineering manager and
+                techincal lead with over 10 years commerical experience.
+              </p>
+              <p>
+                With a background in Front End Development (including JavaScript
+                / React / Next.js) I thrive on building and empowering teams
+                delivering high quality user centric experiences.
+              </p>
+              <p>Feel free to reach out.</p>
+            </div>
+          </div>
+          {props.feed.length > 0 && (
+            <div className="rounded-md overflow-hidden shadow-md">
+              <div className="bg-white bg-opacity-20 p-5">
+                <h2 className="text-xl font-medium">Dev.to feed</h2>
+              </div>
+              <div className="bg-white bg-opacity-10 p-5 flex flex-col gap-6">
+                {props.feed.map((article, index) => {
+                  const date = new Date(article.isoDate)
+                  return (
+                    <div key={index}>
+                      <h3 className="text-lg mb-1">
+                        <Link href={article.link}>
+                          <a
+                            title="{article.title}"
+                            className="hover:underline"
+                          >
+                            {article.title}
+                          </a>
+                        </Link>
+                      </h3>
+                      <p className="text-xs">{`${date.getDate()} ${date.toLocaleString(
+                        'default',
+                        {
+                          month: 'long'
+                        }
+                      )} ${date.getFullYear()}`}</p>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )}
+        </main>
       </div>
     </>
   )

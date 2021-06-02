@@ -35,6 +35,8 @@ export default function Home(props) {
                 src="/profile.jpg"
                 alt="David Hayes"
                 className="rounded-full shadow-md mx-auto w-36"
+                width="144"
+                height="144"
               />
               <h1 className="text-3xl font-medium mt-5">David Hayes</h1>
               <p>Engineering Manager &amp; Techincal Lead</p>

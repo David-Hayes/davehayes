@@ -18,7 +18,7 @@ export default function Home(props) {
         <title>David Hayes - Technical Lead</title>
         <meta
           name="description"
-          content="Techincal Lead and Front End Developer based in the UK"
+          content="Technical Lead and Front End Developer based in the UK"
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -39,7 +39,7 @@ export default function Home(props) {
                 height="144"
               />
               <h1 className="text-3xl font-medium mt-5">David Hayes</h1>
-              <p>Engineering Manager &amp; Techincal Lead</p>
+              <p>Engineering Manager &amp; Technical Lead</p>
             </div>
             <div className="bg-white bg-opacity-10 p-5 flex flex-row justify-center gap-3">
               <Link href="https://twitter.com/thedavehayes">
@@ -105,7 +105,7 @@ export default function Home(props) {
             <div className="bg-white bg-opacity-10 p-5 flex flex-col gap-4">
               <p>
                 Hi, I&apos;m David! I am a software engineering manager and
-                techincal lead with over 10 years commerical experience.
+                technical lead with over 10 years commerical experience.
               </p>
               <p>
                 With a background in Front End Development (including JavaScript

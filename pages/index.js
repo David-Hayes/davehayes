@@ -99,28 +99,24 @@ export default function Home(props) {
         </header>
         <main>
           <div className="rounded-md overflow-hidden shadow-md mb-12">
-            <div className="bg-white bg-opacity-20 p-5">
-              <h2 className="text-xl font-medium">About</h2>
-            </div>
             <div className="bg-white bg-opacity-10 p-5 flex flex-col gap-4">
               <p>
                 Hi, I&apos;m David! I am a software engineering manager and
                 technical lead with over 10 years commerical experience.
               </p>
               <p>
-                With a background in Front End Development (including JavaScript
-                / React / Next.js) I thrive on building and empowering teams to
-                deliver high quality user centric experiences.
+                I specialise in Front End languages and technologies, including
+                JavaScript, Node.js, React and Next.js. I thrive on building and
+                empowering teams to deliver high quality user centric
+                experiences.
               </p>
-              <p>Feel free to reach out.</p>
+              <p>Please feel free to reach out!</p>
             </div>
           </div>
           {props.feed.length > 0 && (
             <div className="rounded-md overflow-hidden shadow-md">
               <div className="bg-white bg-opacity-20 p-5">
-                <h2 className="text-xl font-medium">Dev.to feed</h2>
-              </div>
-              <div className="bg-white bg-opacity-10 p-5 flex flex-col gap-6">
+                <h2 className="text-xl font-medium mb-3">Dev.to feed</h2>
                 {props.feed.map((article, index) => {
                   const date = new Date(article.isoDate)
                   return (
@@ -148,6 +144,9 @@ export default function Home(props) {
             </div>
           )}
         </main>
+        <footer className="text-xs text-center mt-10">
+          &copy; David Hayes
+        </footer>
       </div>
     </>
   )

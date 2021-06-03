@@ -10,7 +10,7 @@ class AppDocument extends Document {
     return (
       <Html className="h-full">
         <Head />
-        <body className="bg-gray-100 text-gray-800 bg-site-grad bg-no-repeat px-5">
+        <body className="bg-gray-100 text-gray-900 bg-site-grad bg-no-repeat px-5">
           <Main />
           <NextScript />
         </body>
